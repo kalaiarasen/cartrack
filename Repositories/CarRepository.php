@@ -17,7 +17,7 @@ class CarRepository
     public function list($id)
     {
         try {
-            if (!is_int($id)) {
+            if (!is_null($id) && !is_int($id)) {
                 throw new Exception('Invalid id type');
             }
             $data = $this->car->get($id);
@@ -46,6 +46,9 @@ class CarRepository
         $data = json_decode($data);
         $constant = new CarConstant($data);
         try {
+            if (!is_null($id) && !is_int($id)) {
+                throw new Exception('Invalid id type');
+            }
             $data = $this->car->sync($constant, $id);
             if ($id && empty($data)) {
                 throw new Exception('No Data for Provided id');
@@ -59,6 +62,9 @@ class CarRepository
     public function delete($id)
     {
         try {
+            if (!is_null($id) && !is_int($id)) {
+                throw new Exception('Invalid id type');
+            }
             $data = $this->car->delete($id);
             if (!$data) {
                 throw new Exception('No Data for Provided id');
