@@ -2,19 +2,23 @@
 
 REST Api project without framework dependencies.
 
-## Usage
+##Installation
+- Pull the repository to your local.
+- Default configuration is using database from AWS.  
 
+## Usage
 I've used `cars` table from provided details.
 
 ### Routes as follow
+Assuming `cartrack.test` is the virtual domain.
 
 METHOD  | Route | Content Body | Description
 ------------- | -------------| -------------| -------------
-GET     | `cartrack.staging-host.dev`| -| - to list all record
-GET     | `cartrack.staging-host.dev/{id}`| -| - to list record by id
-POST    | `cartrack.staging-host.dev`| {"name": "Hilux","type": "Sedan","brand": "Toyota","year": "2020"}| - to create new record
-PUT     | `cartrack.staging-host.dev/{id}`| {"name": "Hilux","type": "Sedan","brand": "Toyota","year": "2020"}| - to update old record with given id
-DELETE  | `cartrack.staging-host.dev/{id}`| -| - to delete record by id
+GET     | `cartrack.test`| -| - to list all record
+GET     | `cartrack.test/{id}`| -| - to list record by id
+POST    | `cartrack.test`| {"name": "Hilux","type": "Sedan","brand": "Toyota","year": "2020"}| - to create new record
+PUT     | `cartrack.test/{id}`| {"name": "Hilux","type": "Sedan","brand": "Toyota","year": "2020"}| - to update old record with given id
+DELETE  | `cartrack.test/{id}`| -| - to delete record by id
 
 ### Validation
 
